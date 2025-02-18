@@ -1,0 +1,56 @@
+Q.1 What does it mean to 'debug' a JavaScript program?
+
+ "Debugging" a JavaScript program means identifying, diagnosing, and fixing errors (or "bugs") in the code to ensure the program
+  runs as expected. These bugs can be logical errors, syntax errors, runtime errors, or unexpected behaviors.
+
+Here's what the debugging process generally involves:
+
+1. **Identifying Errors**: This can be done by observing error messages in the console or noticing that the program isn't functioning
+      as expected. You might also use tools like browser developer tools (Chrome DevTools) or IDEs with debugging support.
+
+2. **Examining Code**: After detecting where the error occurs, you review the code around the error and logic flow to understand 
+       what's going wrong.
+
+3. **Using Debugging Tools**: Many modern web browsers come with built-in developer tools (e.g., Chrome DevTools) that allow you to:
+   - Set **breakpoints** (pause execution at a specific line of code),
+   - Inspect **variables** and their values,
+   - View the **call stack** (the order in which functions are called),
+   - Step through the code line by line to trace its execution.
+
+4. **Fixing Errors**: Once the problem is understood, you make the necessary changes to correct it. This could involve fixing syntax
+      errors, rewriting sections of logic, handling edge cases, or making performance optimizations.
+
+5. **Testing**: After making changes, it's important to test the program again to make sure the issue is resolved and no new issues
+         were introduced.
+
+In short, debugging is about finding and fixing the problems in your code to ensure it behaves correctly.
+
+
+Q.2  And why should we learn to debug our code?
+
+Learning to debug your code is crucial for several reasons:
+
+1. **Identifying and Fixing Issues**:  Bugs (errors) are inevitable in software development.
+     Being able to debug helps you identify what's going wrong in your code and fix it efficiently,
+     ensuring the program works as expected.
+
+2. **Improved Problem-Solving Skills**: Debugging forces you to think critically about how your code works and how different
+     parts of the program interact. This strengthens your logical thinking and helps you become a better problem solver.
+
+3. **Faster Development**: If you can quickly identify and fix bugs, you'll spend less time trying to figure out why your code
+      isn't working and more time building and improving your software.
+
+4. **Understanding the Code Better**: Debugging helps you understand your code more deeply. As you inspect variables, trace execution, 
+        and fix issues, you get a clearer picture of how the program is functioning, and you become more familiar with its behavior.
+
+5. **Avoiding Future Bugs**: By learning to debug and understanding the root cause of an issue, you can learn how to avoid similar
+         problems in the future. It helps you write more reliable code.
+
+6. **Handling Complex Code**: As codebases grow, debugging becomes essential for working with complex logic, third-party libraries, 
+        or when you inherit someone else’s code. Debugging tools and techniques help you untangle those complex interactions.
+
+7. **Better Collaboration**: Debugging is a key skill when working in a team. It helps you identify issues in your code before others 
+         encounter them, and it allows you to help teammates solve problems they may face in the code.
+
+In short, debugging is a vital skill for writing clean, efficient, and reliable code. It helps you become more confident and effective
+in your coding, leading to better software and faster problem resolution.
