@@ -1,0 +1,68 @@
+In JavaScript, **comparison operators** are used to compare two values or expressions. They return a boolean value (`true` or `false`) based on the comparison. Here's a list of the main comparison operators:
+
+### 1. **`==` (Equality)**
+   - Compares two values for equality **after converting** them to the same type (type coercion).
+   ```javascript
+   console.log(5 == '5');  // true (string '5' is converted to number 5)
+   ```
+
+### 2. **`===` (Strict Equality)**
+   - Compares two values for equality **without** converting them (no type coercion).
+   ```javascript
+   console.log(5 === '5');  // false (different types: number and string)
+   ```
+
+### 3. **`!=` (Inequality)**
+   - Compares two values for inequality **after converting** them to the same type.
+   ```javascript
+   console.log(5 != '5');  // false (both are equal after type coercion)
+   ```
+
+### 4. **`!==` (Strict Inequality)**
+   - Compares two values for inequality **without** converting them (no type coercion).
+   ```javascript
+   console.log(5 !== '5');  // true (different types)
+   ```
+
+### 5. **`>` (Greater Than)**
+   - Checks if the value on the left is greater than the value on the right.
+   ```javascript
+   console.log(5 > 3);  // true
+   ```
+
+### 6. **`<` (Less Than)**
+   - Checks if the value on the left is less than the value on the right.
+   ```javascript
+   console.log(3 < 5);  // true
+   ```
+
+### 7. **`>=` (Greater Than or Equal to)**
+   - Checks if the value on the left is greater than or equal to the value on the right.
+   ```javascript
+   console.log(5 >= 5);  // true
+   ```
+
+### 8. **`<=` (Less Than or Equal to)**
+   - Checks if the value on the left is less than or equal to the value on the right.
+   ```javascript
+   console.log(3 <= 5);  // true
+   ```
+
+### Examples:
+
+```javascript
+console.log(10 > 5);     // true
+console.log(5 < 3);      // false
+console.log(4 == '4');   // true (because of type coercion)
+console.log(4 === '4');  // false (strict comparison)
+console.log(10 != 5);    // true
+console.log(10 !== '10'); // true (strict comparison)
+console.log(5 >= 5);     // true
+console.log(3 <= 4);     // true
+```
+
+### Important Notes:
+`==` vs. `===`**: The `==` operator allows type coercion (so `'5'` == `5`), while `===` requires both value and type to be identical.
+`!=` vs. `!==`**: Similarly, `!=` allows type coercion (so `'5'` != `5` is false), while `!==` does not allow type coercion.
+
+Using `===` and `!==` is generally preferred to avoid unexpected type conversions in JavaScript.
