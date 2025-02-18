@@ -1,0 +1,177 @@
+In JavaScript, strings are a sequence of characters and come with a wide range of built-in methods that allow you to manipulate and interact with them. Here are some commonly used string methods:
+
+### 1. **`charAt(index)`**
+Returns the character at the specified index.
+
+```javascript
+let str = "Hello";
+console.log(str.charAt(0)); // Output: "H"
+```
+
+### 2. **`charCodeAt(index)`**
+Returns the Unicode value (UTF-16 code unit) of the character at the specified index.
+
+```javascript
+let str = "Hello";
+console.log(str.charCodeAt(0)); // Output: 72 (Unicode of 'H')
+```
+
+### 3. **`concat(string2, string3, ...)`**
+Concatenates two or more strings together.
+
+```javascript
+let str1 = "Hello";
+let str2 = " World";
+console.log(str1.concat(str2)); // Output: "Hello World"
+```
+
+### 4. **`includes(searchString)`**
+Checks if a string contains a specified substring.
+
+```javascript
+let str = "Hello World";
+console.log(str.includes("World")); // Output: true
+```
+
+### 5. **`indexOf(searchValue)`**
+Returns the first index where the specified substring is found. Returns `-1` if not found.
+
+```javascript
+let str = "Hello World";
+console.log(str.indexOf("World")); // Output: 6
+```
+
+### 6. **`lastIndexOf(searchValue)`**
+Returns the last index where the specified substring is found. Returns `-1` if not found.
+
+```javascript
+let str = "Hello World, hello again";
+console.log(str.lastIndexOf("hello")); // Output: 13
+```
+
+### 7. **`replace(searchValue, newValue)`**
+Replaces the first occurrence of a substring with a new string.
+
+```javascript
+let str = "Hello World";
+console.log(str.replace("World", "JavaScript")); // Output: "Hello JavaScript"
+```
+
+### 8. **`replaceAll(searchValue, newValue)`**
+Replaces all occurrences of a substring with a new string (ES2021 and later).
+
+```javascript
+let str = "Hello World World";
+console.log(str.replaceAll("World", "JavaScript")); // Output: "Hello JavaScript JavaScript"
+```
+
+### 9. **`slice(start, end)`**
+Extracts a part of the string, returning a new string. The `start` is inclusive, and the `end` is exclusive.
+
+```javascript
+let str = "Hello World";
+console.log(str.slice(0, 5)); // Output: "Hello"
+```
+
+### 10. **`split(separator)`**
+Splits a string into an array of substrings based on a separator.
+
+```javascript
+let str = "apple,banana,orange";
+let arr = str.split(",");
+console.log(arr); // Output: ["apple", "banana", "orange"]
+```
+
+### 11. **`toLowerCase()`**
+Converts the entire string to lowercase.
+
+```javascript
+let str = "Hello World";
+console.log(str.toLowerCase()); // Output: "hello world"
+```
+
+### 12. **`toUpperCase()`**
+Converts the entire string to uppercase.
+
+```javascript
+let str = "Hello World";
+console.log(str.toUpperCase()); // Output: "HELLO WORLD"
+```
+
+### 13. **`trim()`**
+Removes whitespace from both ends of the string.
+
+```javascript
+let str = "  Hello World  ";
+console.log(str.trim()); // Output: "Hello World"
+```
+
+### 14. **`substring(start, end)`**
+Returns the part of the string between the specified start and end indexes (end is exclusive).
+
+```javascript
+let str = "Hello World";
+console.log(str.substring(0, 5)); // Output: "Hello"
+```
+
+### 15. **`toString()`**
+Converts a string to a string (useful for some non-string types, like numbers or objects).
+
+```javascript
+let num = 123;
+console.log(num.toString()); // Output: "123"
+```
+
+### 16. **`startsWith(searchString)`**
+Checks if the string starts with the specified substring.
+
+```javascript
+let str = "Hello World";
+console.log(str.startsWith("Hello")); // Output: true
+```
+
+### 17. **`endsWith(searchString)`**
+Checks if the string ends with the specified substring.
+
+```javascript
+let str = "Hello World";
+console.log(str.endsWith("World")); // Output: true
+```
+
+### 18. **`repeat(count)`**
+Repeats the string the specified number of times.
+
+```javascript
+let str = "Hello ";
+console.log(str.repeat(3)); // Output: "Hello Hello Hello "
+```
+
+### 19. **`padStart(targetLength, padString)`**
+Pads the string from the start with the specified string until it reaches the given length.
+
+```javascript
+let str = "5";
+console.log(str.padStart(3, "0")); // Output: "005"
+```
+
+### 20. **`padEnd(targetLength, padString)`**
+Pads the string from the end with the specified string until it reaches the given length.
+
+```javascript
+let str = "5";
+console.log(str.padEnd(3, "0")); // Output: "500"
+```
+
+### 21. **`localeCompare(otherString)`**
+Compares two strings in the current locale. It returns:
+- `0` if the strings are equal.
+- A negative number if the calling string is less than the other string.
+- A positive number if the calling string is greater than the other string.
+
+```javascript
+let str1 = "apple";
+let str2 = "banana";
+console.log(str1.localeCompare(str2)); // Output: negative number
+```
+
+These methods provide a robust way to manipulate and work with strings in JavaScript.
