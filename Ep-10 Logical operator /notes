@@ -1,0 +1,78 @@
+In JavaScript, **logical operators** are used to combine or invert boolean values. These operators work with expressions that evaluate to `true` or `false`, and return a boolean result (`true` or `false`). Here are the main logical operators in JavaScript:
+
+### 1. **`&&` (Logical AND)**
+   - Returns `true` if **both** operands are `true`, otherwise returns `false`.
+   ```javascript
+   console.log(true && true);   // true
+   console.log(true && false);  // false
+   console.log(false && true);  // false
+   console.log(false && false); // false
+   ```
+
+### 2. **`||` (Logical OR)**
+   - Returns `true` if **at least one** operand is `true`, otherwise returns `false`.
+   ```javascript
+   console.log(true || true);   // true
+   console.log(true || false);  // true
+   console.log(false || true);  // true
+   console.log(false || false); // false
+   ```
+
+### 3. **`!` (Logical NOT)**
+   - Inverts the boolean value. If the operand is `true`, it returns `false`, and if it's `false`, it returns `true`.
+   ```javascript
+   console.log(!true);   // false
+   console.log(!false);  // true
+   ```
+
+### Examples of Logical Operators:
+
+```javascript
+let a = true;
+let b = false;
+let c = true;
+
+console.log(a && b);   // false (because one is false)
+console.log(a || b);   // true (because one is true)
+console.log(!a);       // false (because a is true)
+console.log(!(a && b)); // true (because a && b is false, so !false is true)
+```
+
+### Truthy and Falsy Values:
+Logical operators in JavaScript operate based on truthy and falsy values:
+- **Falsy values**: `false`, `0`, `""` (empty string), `null`, `undefined`, `NaN`
+- **Truthy values**: All other values that aren't falsy.
+
+For example:
+```javascript
+console.log(0 && "hello");   // 0 (because 0 is falsy)
+console.log("hello" && 5);   // 5 (because both are truthy, returns the last truthy value)
+console.log("" || "world"); // "world" (because "" is falsy, so returns the second value)
+console.log(null || "hi");  // "hi" (null is falsy, so returns the second value)
+```
+
+### Short-circuit Evaluation:
+- **AND (`&&`)**: If the first operand is `false`, JavaScript won’t evaluate the second operand (because the result is guaranteed to be `false`).
+- **OR (`||`)**: If the first operand is `true`, JavaScript won’t evaluate the second operand (because the result is guaranteed to be `true`).
+
+Example of short-circuiting:
+```javascript
+console.log(false && (5 / 0));  // false (second part isn't evaluated)
+console.log(true || (5 / 0));   // true (second part isn't evaluated)
+```
+
+### Use Cases:
+- **Combining conditions**: Logical operators are commonly used in `if` statements or loops to check multiple conditions.
+  ```javascript
+  if (age >= 18 && age <= 60) {
+    console.log("You are an adult.");
+  }
+  ```
+- **Negating conditions**: You can negate boolean values or expressions using `!` to reverse the condition.
+  ```javascript
+  if (!(age < 18)) {
+    console.log("You are not a minor.");
+  }
+  ```
+
+These logical operators help simplify conditional expressions and control the flow of your programs.
