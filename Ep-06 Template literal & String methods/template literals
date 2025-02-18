@@ -1,0 +1,50 @@
+In JavaScript, a **template literal** is a feature that allows for easier string interpolation and multi-line strings. Template literals are enclosed by backticks (`` ` ``), and they can include placeholders, expressions, and variables using `${}`.
+
+Here’s a breakdown of the main features of template literals:
+
+### 1. **String Interpolation**
+You can embed variables or expressions directly within strings:
+
+```javascript
+let name = 'John';
+let greeting = `Hello, ${name}!`; 
+console.log(greeting); // Output: Hello, John!
+```
+
+### 2. **Multi-line Strings**
+Template literals can span multiple lines without needing to concatenate strings or escape newline characters.
+
+```javascript
+let multilineString = `This is a string
+that spans multiple lines
+without needing special characters.`;
+console.log(multilineString);
+```
+
+### 3. **Expression Substitution**
+You can insert any valid JavaScript expression inside `${}` within the template literal:
+
+```javascript
+let a = 5;
+let b = 10;
+let result = `The sum of ${a} and ${b} is ${a + b}.`;
+console.log(result); // Output: The sum of 5 and 10 is 15.
+```
+
+### 4. **Tagged Templates**
+You can use tagged templates to process a template literal with a function. This allows you to customize how the string is processed.
+
+```javascript
+function tag(strings, ...values) {
+  console.log(strings); // array of string literals
+  console.log(values); // array of interpolated values
+  return "Custom result";
+}
+
+let name = "Alice";
+let age = 30;
+let message = tag`My name is ${name} and I am ${age} years old.`;
+console.log(message); // Output: Custom result
+```
+
+Template literals are a powerful feature that simplifies string manipulation and enhances the readability of your code.
