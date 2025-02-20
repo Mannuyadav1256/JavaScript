@@ -1,1 +1,43 @@
+In JavaScript, you can create dialog boxes using built-in methods. There are three main types of dialog boxes:
+
+1. **Alert Box**: Displays a message with an OK button.
+2. **Confirm Box**: Displays a message with OK and Cancel buttons, allowing the user to confirm or cancel an action.
+3. **Prompt Box**: Displays a message with a text input field, allowing the user to input a value.
+
+Here’s how you can use each type:
+
+### Alert Box
+An alert box is used to display a simple message to the user.
+
+```javascript
+alert("This is an alert box!");
+```
+
+### Confirm Box
+A confirm box is used to ask the user for confirmation. It returns `true` if the user clicks OK and `false` if the user clicks Cancel.
+
+```javascript
+let userConfirmed = confirm("Do you want to proceed?");
+if (userConfirmed) {
+    console.log("User clicked OK");
+} else {
+    console.log("User clicked Cancel");
+}
+```
+
+### Prompt Box
+A prompt box is used to ask the user for input. It returns the input value if the user clicks OK, and `null` if the user clicks Cancel.
+
+```javascript
+let userName = prompt("Please enter your name:", "Default Name");
+if (userName !== null) {
+    console.log("Hello, " + userName);
+} else {
+    console.log("User canceled the prompt");
+}
+```
+
+These dialog boxes are simple and easy to use for basic user interactions. However, for more complex dialog boxes and better user
+experience, you might want to use custom dialog boxes created with HTML, CSS, and JavaScript.
+
 
