@@ -1,0 +1,19 @@
+The ternary operator in JavaScript provides a concise way to perform conditional operations. It works as a shortcut for the `if-else` statement,
+allowing you to make a decision in a single line of code. The syntax is as follows:
+
+```javascript
+condition ? expressionIfTrue : expressionIfFalse
+```
+
+Here's a simple example:
+
+```javascript
+let age = 18;
+let isAdult = (age >= 18) ? "Yes" : "No";
+console.log(isAdult); // Output: Yes
+```
+
+In this example, the condition `age >= 18` is evaluated. If it's true, `isAdult` is set to "Yes"; otherwise, it's set to "No". 
+It's a handy way to streamline your code when you have straightforward conditional logic. 
+
+If you have any more questions about JavaScript or anything else, feel free to ask!
