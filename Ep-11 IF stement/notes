@@ -1,4 +1,5 @@
-The `if` statement in JavaScript allows you to execute a block of code based on whether a specified condition is true. The basic syntax is as follows:
+The `if` statement in JavaScript allows you to execute a block of code based on whether a specified condition is true.
+The basic syntax is as follows:
 
 ```javascript
 if (condition) {
