@@ -120,7 +120,8 @@ There are two types of data types in JavaScript
 	   let str = num + ""; // "123"
 	   ```
 	 
-	Each of these methods will convert a number to a string. Pick the one that best fits your coding style. Let me know if you have any other questions or need further assistance!
+	Each of these methods will convert a number to a string. Pick the one that best fits your coding style.
+        Let me know if you have any other questions or need further assistance!
 	 
 	• Covert Null to Number
  
@@ -133,49 +134,58 @@ There are two types of data types in JavaScript
 	console.log(numberValue);  // Output will be 0
 	```
 	 
-	When you convert `null` to a number using the `Number` function, it results in `0`. This is because JavaScript treats `null` as `0` when converting it to a numeric value.
-	 
-		If you have any specific scenarios or additional questions related to this, feel free to ask!
-		 
+	When you convert `null` to a number using the `Number` function, it results in `0`. This is because JavaScript
+         treats `null` as `0` when converting it to a numeric value.
+	 	 
 	•  convert undefined into number
 	 
 	In JavaScript, you can convert undefined into a Number using different methods. Here are a few approaches:
+
 	1. Using Number() Constructor
 	The Number() function can be used to convert undefined into a number:
 	let result = Number(undefined);
-console.log(result); // NaN
+        console.log(result); // NaN
 	This will result in NaN (Not-a-Number), as undefined is not a valid numeric value.
+
 	2. Using + (Unary Plus) Operator
 	You can also use the unary plus (+) operator to convert undefined into a number:
 	let result = +undefined;
-console.log(result); // NaN
+        console.log(result); // NaN
 	Similar to Number(), it will return NaN.
+
 	3. Using parseInt() or parseFloat()
-	These functions are designed to parse a string and convert it into an integer or a floating-point number. They will also return NaN if they cannot parse a valid number from the input:
+	These functions are designed to parse a string and convert it into an integer or a floating-point number. 
+        They will also return NaN if they cannot parse a valid number from the input:
 	let result = parseInt(undefined);
-console.log(result); // NaN
+        console.log(result); // NaN
 	let resultFloat = parseFloat(undefined);
-console.log(resultFloat); // NaN
+        console.log(resultFloat); // NaN
+
 	• Convert undefined into string
+
 	In JavaScript, you can convert undefined into a string using different methods. Here are a few approaches:
+
 	1. Using String() Constructor
 	The String() function can be used to explicitly convert undefined to a string:
 	let result = String(undefined);
-console.log(result); // "undefined"
+        console.log(result); // "undefined"
 	This will convert undefined into the string "undefined".
+
 	2. Using .toString() Method
 	If undefined is not explicitly passed as an object, calling .toString() on undefined will throw an error. However, if you are dealing with values that might be undefined, you can handle it more safely with a check:
 	let result = (undefined).toString(); // This will throw an error
 	To avoid errors, it’s better to use:
 	let result = (undefined !== undefined) ? undefined.toString() : "undefined";
-console.log(result);  // "undefined"
+        console.log(result);  // "undefined"
+
 	3. Using Template Literals
 	You can also use template literals (backticks) to convert undefined to a string:
 	let result = `${undefined}`;
-console.log(result); // "undefined"
+        console.log(result); // "undefined"
+
 	4. Using Concatenation
 	By concatenating undefined with an empty string (""), it will automatically convert undefined into a string:
 	let result = undefined + "";
-console.log(result); // "undefined"
+        console.log(result); // "undefined"
 	
 	
