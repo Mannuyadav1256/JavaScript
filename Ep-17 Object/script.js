@@ -1,3 +1,31 @@
+//object in javascript
+
+const myIntro = {
+    name: 'mannu ydava',
+    gender: 'male',
+    //you can use nested object
+    adress: {
+        place:'mahuar,dist-buxar, bihar',//dont forget comma between two variable
+        home: 'ganaga kinare'
+    }
+
+}
+//note- same object variable address are not same 
+const myIntro1 = {
+    name: 'mannu ydava',
+    gender: 'male'
+
+}
+//empty object
+const favourateFruit = {}
+const favouratecolor =  {}
+//in above two empty object but both of us variable addresss are not same
+
+//but two empty string variable address are same
+const name ='';
+const color ='';
+//
+
 // Object.seal vs Object.freze
 
 const user = {
