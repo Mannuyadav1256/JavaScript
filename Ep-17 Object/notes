@@ -1,0 +1,101 @@
+In JavaScript, an object is a collection of properties, where each property is a key-value pair. Objects are used to store related data and functionality together,
+making it easier to organize and manipulate complex data.
+
+Here's a simple example of an object:
+```javascript
+const person = {
+  firstName: 'John',
+  lastName: 'Doe',
+  age: 30,
+  isEmployed: true,
+  greet: function() {
+    console.log('Hello, my name is ' + this.firstName + ' ' + this.lastName);
+  }
+};
+
+// Accessing object properties
+console.log(person.firstName); // Output: John
+console.log(person['lastName']); // Output: Doe
+
+// Modifying object properties
+person.age = 31;
+console.log(person.age); // Output: 31
+
+// Adding new properties
+person.job = 'Developer';
+console.log(person.job); // Output: Developer
+
+// Deleting properties
+delete person.isEmployed;
+console.log(person.isEmployed); // Output: undefined
+
+// Calling an object method
+person.greet(); // Output: Hello, my name is John Doe
+```
+
+In this example:
+- The `person` object has properties like `firstName`, `lastName`, `age`, `isEmployed`, and a method `greet`.
+
+
+
+Object.seal() vs Object.freeze
+
+Both `Object.freeze()` and `Object.seal()` are methods in JavaScript that restrict how objects can be modified, but they have different levels of restrictions.
+
+### 1. **`Object.freeze()`**:
+   - **Purpose**: It makes an object **immutable** by preventing any changes to the object itself, including adding, removing, or modifying properties.
+   - **Effect**:
+     - **No new properties** can be added.
+     - **Existing properties cannot be modified** (both value and descriptor).
+     - **Properties cannot be removed**.
+     - The object's properties are **non-writable** and **non-configurable**.
+   - **Shallow Freeze**: It only prevents modification of the top-level properties. Nested objects can still be modified unless they are also frozen.
+
+   **Example:**
+   ```javascript
+   const obj = { name: 'Alice', age: 25 };
+   Object.freeze(obj);
+
+   obj.age = 30;  // This will not change the 'age' property
+   delete obj.name;  // This will not delete the 'name' property
+
+   console.log(obj);  // { name: 'Alice', age: 25 }
+   ```
+
+### 2. **`Object.seal()`**:
+   - **Purpose**: It makes an object **partially immutable** by preventing new properties from being added and existing properties from being removed, but it still allows
+                  modification of the values of existing properties.
+   - **Effect**:
+     - **No new properties** can be added.
+     - **Properties cannot be removed**.
+     - **Properties can still be modified** (value and writable descriptor).
+     - The object’s properties are **non-configurable**, but **writable** (unless explicitly set as non-writable).
+   - **Shallow Seal**: Like `Object.freeze()`, `Object.seal()` only affects the object at the top level, and nested objects can still be modified.
+
+   **Example:**
+   ```javascript
+   const obj = { name: 'Alice', age: 25 };
+   Object.seal(obj);
+
+   obj.age = 30;  // This will change the 'age' property
+   delete obj.name;  // This will not delete the 'name' property
+
+   console.log(obj);  // { name: 'Alice', age: 30 }
+   ```
+
+### Key Differences:
+- **`Object.freeze()`**: 
+  - Prevents modifications to values, property additions, and removals.
+  - The object becomes completely immutable.
+  
+- **`Object.seal()`**:
+  - Prevents property additions and deletions, but allows modifications of existing property values.
+
+In summary, use `Object.freeze()` when you want to make an object completely immutable, and use `Object.seal()` when you want to prevent changes
+     to the structure (no new properties or deletions) but still allow value modifications of existing properties.
+- You can access object properties using dot notation (`person.firstName`) or bracket notation (`person['lastName']`).
+- You can modify, add, and delete properties as needed.
+- Methods are functions that are defined as properties of an object.
+
+JavaScript objects are incredibly versatile and form the foundation for many advanced concepts in the language. If you have any specific questions about objects 
+or need further explanation, feel free to ask!
