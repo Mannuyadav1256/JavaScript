@@ -1,0 +1,40 @@
+Q.1 Name all kinds of different data types in JavaScript.
+Ans- string,number,boolean,undefined,null, bigint,symbol
+
+Q.2 What is a 'string' data type in JavaScript? Can you give an example?
+Ans- A string is a series of character like 'mannu'
+
+Q.3 What does the 'boolean' data type mean in JavaScript?
+Ans- It represents true or false values
+
+Q.4 What does the 'undefined' data type represent in JavaScript? And how it is different from 'null'?
+Ans- In javascript "undefined" represents the absence of a value assinged to a variable. undifined means 
+a variable declared but not yet been assinged a value whare null means variable declared and given the value of null
+
+Q.5 What does the 'null' data type represent in JavaScript?
+Ans- It represents an absence of a value
+
+Q.6 What data type is used to assign any number in JavaScript?
+Ans- number
+
+Q.7 What is an example of non-primitive data type?
+Ans- object
+
+
+Q.8 What is typeof null?
+Ans- object
+
+Q.9 How would you convert a number to a string in JavaScript?
+Ans- By concatenating with an empty string and Using the toString() method
+
+Q.10 How would you convert a string to a number in JavaScript?
+Ans- Using the parseInt() or parseFloat() functions
+
+
+Q.11 Which data type in JavaScript is used to represent large numbers?
+Ans- BigInt
+
+
+Q.12 Create a large number using bigint.
+Ans- let x = 1234567890123456789012345n; let y = BigInt(1234567890123456789012345)
+
