@@ -1,0 +1,22 @@
+	
+Q.1 What's the most basic difference between using let and const for creating variables in JavaScript?
+Ans- Variables declared with let can be reassigned, while variables declared with const cannot.
+
+Q.2 What is the difference between using 'let' and 'var' for creating variables in JavaScript?
+Ans- let variables can not be accessed outside of a block while var variables can be accessed outside of a block
+
+Q.3 Try to Debug the code and see where is the error coming from and fix it. Then write the correct answer.
+    const num = 5
+    num++
+    console.log(num + 5)
+Ans- let num=5 
+     num++ 
+     console.log(num+5) // output - 11
+     Reason- variable declared with const can't reasigned variable
+
+Q.4 Which of the following statements about variable naming rules in JavaScript is correct?
+Ans- Variable names cannot begin with a number.
+
+Q.5 What is the recommended convention for naming variables in JavaScript?
+Ans- camelCase
+
