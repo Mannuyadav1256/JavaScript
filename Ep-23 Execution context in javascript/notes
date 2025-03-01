@@ -1,1 +1,62 @@
+In JavaScript, **execution context** refers to the environment in which the current code is being evaluated and executed. It contains ever
+ything that the code needs to execute, such as variables, functions, the value of `this`, and the scope chain.
 
+There are three types of execution contexts in JavaScript:
+
+### 1. **Global Execution Context**
+   - This is the default or base context in which JavaScript code runs when it's not inside any function. 
+   - It’s the outermost context and has a `this` value pointing to the global object (`window` in browsers, `global` in Node.js).
+   - The global execution context is created when the JavaScript engine first starts executing the script.
+
+### 2. **Function Execution Context**
+   - Each time a function is invoked, a new execution context is created for that function. 
+   - This context includes the function’s local variables, parameters, and the value of `this` inside the function. 
+   - The function’s execution context is pushed onto the call stack, and once the function execution is complete, its execution 
+      context is popped off the stack.
+
+### 3. **Eval Execution Context**
+   - Although not commonly used, the `eval()` function in JavaScript can create a new execution context. 
+   - It allows you to execute arbitrary code, which may have its own context.
+
+### Key Components of an Execution Context:
+1. **Variable Environment**: This includes all variables and functions that are accessible in that execution context. It holds the 
+                           declaration of variables and functions.
+   
+2. **Scope Chain**: It is the chain of all the scopes from the current execution context to the global context. It allows access
+         to variables that are in outer (enclosing) scopes.
+
+3. **`this`**: Refers to the value of `this` in the current context, which can vary based on how the function is called.
+
+### Execution Stack (Call Stack):
+- JavaScript executes code using a stack data structure called the **Call Stack**. When a function is called, a new execution
+  context is created and pushed onto the stack. Once the function finishes executing, its context is popped off the stack, 
+   and control returns to the previous context.
+
+### Example:
+```javascript
+function first() {
+  var a = 10;
+  console.log(a);
+}
+
+function second() {
+  var b = 20;
+  first(); // Calling the first function
+}
+
+second(); // Calling the second function
+```
+
+1. The global execution context is created when the script is first run.
+2. When `second()` is called, a new execution context for `second` is created and added to the call stack.
+3. Inside `second()`, `first()` is called, so another execution context for `first` is created and added to the stack.
+4. Once `first()` finishes, its execution context is popped off, and then `second()` finishes, and its execution context is
+    also popped off.
+5. The global execution context remains as the base context.
+
+### Execution Context Creation Phases:
+1. **Creation Phase**: The JavaScript engine sets up the environment, creating memory for variables, functions, and the scope chain.
+2. **Execution Phase**: The code is executed line by line in the context, and values are assigned to variables, functions are called,etc.
+
+Understanding execution context is essential for grasping JavaScript’s scope, closures, and `this` behavior, as it helps explain how
+variables and functions are accessed and executed.
