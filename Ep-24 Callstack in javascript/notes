@@ -1,0 +1,101 @@
+The **call stack** in JavaScript is a fundamental part of how the JavaScript engine manages the execution of functions.
+It's a stack data structure that keeps track of the order in which functions are called, ensuring that each function call is executed
+in the correct order.
+
+### How the Call Stack Works:
+The call stack operates on the **Last In, First Out (LIFO)** principle, meaning that the last function to be called is the first one to
+  be executed.
+
+When a function is invoked, a **new execution context** is created for that function, which is then pushed onto the call stack.
+Once the function finishes executing, its execution context is popped off the stack.
+
+### Key Events in the Call Stack:
+
+1. **Pushing to the Call Stack**:
+   - When a function is called, a new execution context is created for that function and added to the top of the call stack.
+   
+2. **Executing the Function**:
+   - The JavaScript engine processes the function on top of the stack and executes its code.
+   
+3. **Popping from the Call Stack**:
+   - Once a function completes its execution, its execution context is removed (or popped) from the top of the call stack, and control
+      returns to the previous function.
+
+### Example:
+```javascript
+function first() {
+  console.log('First function');
+}
+
+function second() {
+  console.log('Second function');
+  first(); // Call first() inside second()
+}
+
+function third() {
+  console.log('Third function');
+}
+
+third(); // Call third() first
+second(); // Call second() second
+```
+
+### Step-by-Step Call Stack Process:
+
+1. **Start**: The global execution context is created when the script starts.
+2. **Calling `third()`**: 
+   - The execution context for `third()` is created and pushed onto the call stack.
+   - `console.log('Third function')` is executed, and the execution context for `third()` is popped off the stack when it finishes.
+3. **Calling `second()`**:
+   - The execution context for `second()` is created and pushed onto the call stack.
+   - `console.log('Second function')` is executed.
+   - `first()` is called inside `second()`, so a new execution context for `first()` is created and pushed onto the call stack.
+   - `console.log('First function')` is executed in `first()`, and the execution context for `first()` is popped off when it finishes.
+   - After `first()` completes, the execution context for `second()` finishes and is popped off the stack.
+   
+4. **End**: After `second()` finishes, the global execution context remains as the current context.
+
+### Call Stack Visual:
+
+```
+Call Stack at Start:   [Global Context]
+
+Call Stack after third() is called: 
+[Global Context] -> [third Context]
+
+Call Stack after second() is called: 
+[Global Context] -> [second Context] -> [third Context]
+
+Call Stack after first() is called inside second(): 
+[Global Context] -> [second Context] -> [first Context] -> [third Context]
+
+Call Stack when first() finishes: 
+[Global Context] -> [second Context] -> [third Context]
+
+Call Stack when second() finishes: 
+[Global Context] -> [third Context]
+
+Call Stack at End: 
+[Global Context]
+```
+
+### The Stack Overflow Error:
+If there are too many function calls and the call stack exceeds its maximum size, it leads to a **stack overflow error**. 
+ This usually happens in recursive function calls that don't have a base case or when there's infinite recursion.
+
+For example:
+
+```javascript
+function recursive() {
+  recursive(); // Calling itself indefinitely
+}
+
+recursive(); // Causes a stack overflow
+```
+
+The call stack keeps growing and eventually overflows because there’s no point where the function stops calling itself.
+
+### Conclusion:
+The call stack is an important concept in JavaScript, as it determines how functions are executed and when control is returned 
+from one function to another. Understanding how the call stack works is crucial for grasping concepts like recursion, asynchronous
+programming, and debugging JavaScript code.
