@@ -1,0 +1,23 @@
+// hosting 
+// var: Hoisted and initialized with undefined.
+//let and const: Hoisted but not initialized, leading to a temporal dead zone.
+
+console.log(username);
+
+let username = 'hii';
+
+//Function Declarations: Hoisted and can be called before they are defined
+
+sayhii();
+
+function sayhii(){
+    console.log('hello');
+}
+
+//Function Expressions: Not hoisted in the same way as function declarations.
+hii();
+
+var hii = function(){   //anonymous function 
+    console.log('hii');
+}
+
