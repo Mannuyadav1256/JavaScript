@@ -1,0 +1,125 @@
+In JavaScript, **scope** refers to the context in which variables and functions are accessible. It defines the visibility and lifetime of variables,
+determining where they can be accessed or modified in the code.
+
+### Types of Scope in JavaScript:
+
+1. **Global Scope**
+2. **Function Scope**
+3. **Block Scope**
+4. **Lexical Scope**
+
+Let's break them down in more detail.
+
+---
+
+### 1. **Global Scope**
+Variables declared outside of any function or block are in the **global scope**, meaning they are accessible from anywhere in the code.
+
+```javascript
+var globalVar = 'I am global';
+
+function test() {
+  console.log(globalVar); // Accessible here
+}
+
+test(); // Outputs: I am global
+console.log(globalVar); // Accessible here too
+```
+
+In the above example, `globalVar` is declared in the global scope, so it can be accessed from inside the `test()` function as well as outside it.
+
+### 2. **Function Scope**
+In JavaScript, when a variable is declared inside a function, it is in **function scope**, meaning the variable is only accessible within that function. 
+This scope is createdwhenever a function is invoked.
+
+```javascript
+function example() {
+  var functionScoped = 'I am inside a function';
+  console.log(functionScoped); // Works here
+}
+
+example(); // Outputs: I am inside a function
+console.log(functionScoped); // ReferenceError: functionScoped is not defined
+```
+
+Here, `functionScoped` is only available inside the `example()` function. Trying to access it outside of the function results in an error.
+
+### 3. **Block Scope**
+In ES6 (ECMAScript 2015), the introduction of `let` and `const` added **block scope**. A block is anything surrounded by `{}` (like loops, conditionals,
+or any code block). Variables declared with `let` or `const` are scoped to the block they are declared in, meaning they aren't accessible outside the block.
+
+```javascript
+if (true) {
+  let blockScoped = 'I am inside a block';
+  console.log(blockScoped); // Works here
+}
+
+console.log(blockScoped); // ReferenceError: blockScoped is not defined
+```
+
+In this example, `blockScoped` is only accessible within the `if` block, not outside of it.
+
+### 4. **Lexical Scope (Static Scope)**
+**Lexical scope** means that the scope of a variable is determined by where it is declared in the source code, not where it is executed. In other words,
+           the scope is based on the location of the code in the code structure.
+
+```javascript
+function outer() {
+  let outerVar = 'I am outside';
+  
+  function inner() {
+    console.log(outerVar); // Accesses outerVar from outer() function
+  }
+  
+  inner();
+}
+
+outer(); // Outputs: I am outside
+```
+
+In the above example, the `inner()` function can access the `outerVar` variable because of **lexical scoping**. Even though `inner()` is executed inside the
+`outer()` function, it has access to variables in the outer function’s scope.
+
+---
+
+### Summary of Scopes:
+
+| **Scope Type**        | **Description**                                               | **Access**                                                                                                                                  |
+|-----------------------|---------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------|
+| **Global Scope**       | Variables declared outside of any function or block           | Accessible from anywhere in the code                                                                                                        |
+| **Function Scope**     | Variables declared inside a function                           | Accessible only inside the function                                                                                                         |
+| **Block Scope**        | Variables declared with `let` or `const` inside a block       | Accessible only within the block (e.g., inside loops or conditionals)                                                                        |
+| **Lexical Scope**      | Determined by where the function is defined in the source code | Functions can access variables from outer (enclosing) scopes, even if they are called outside those scopes (Closure concept)                   |
+
+### **What happens if a variable is not declared inside any scope?**
+
+- If you declare a variable without using `let`, `const`, or `var` (e.g., just `x = 10`), it will automatically be created in the
+**global scope** (or in strict mode, it will throw an error). This can lead to unexpected behavior and bugs, so it's recommended to always declare your variables properly.
+
+### **Scopes and Closures**
+
+Closures occur when a function retains access to its lexical scope, even after the function has finished executing. Here's an example:
+
+```javascript
+function outer() {
+  let counter = 0;
+  
+  function increment() {
+    counter++;
+    console.log(counter);
+  }
+  
+  return increment;
+}
+
+const incrementCounter = outer();
+incrementCounter(); // Outputs: 1
+incrementCounter(); // Outputs: 2
+incrementCounter(); // Outputs: 3
+```
+
+Here, the `increment()` function retains access to the `counter` variable even after `outer()` has finished execution. This is an example of a **closure**, where `increment()`
+\"remembers" its lexical environment.
+
+---
+
