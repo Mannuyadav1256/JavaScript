@@ -1,0 +1,18 @@
+//scope in js
+debugger;
+
+let username = 'jhon'// script scope
+const uaseage = 35 // script scope
+var a = 'red'//Global scope
+
+function add(){   //Global scope 
+    const a = 12
+    const b = 13   //local scope
+    console.log(a + b);
+}
+
+//if vaariable declared in function so you can access variable in that fuction.
+// you cannot access in out of function
+
+// example - i want to access variable b 
+console.log(b);// its give error
