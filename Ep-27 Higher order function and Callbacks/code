@@ -1,0 +1,25 @@
+function a(b){
+   console.dir(b);
+    b()
+  
+}
+
+a('mannu')//string argument
+a({username:'mannu',userage:23,})//object argument
+a([1,2,3,4,4])//array pass ,array also a object
+
+//if you want to your function is behave a object so use console.dir
+console.dir(a)
+
+function sayhii(){
+    console.log('hiiiiiiiiiiiiii');
+}
+ 
+//if you pass function in function then it become higher order function
+//so a is higher order function
+a(sayhii)
+
+//callback function
+a(function(){
+    console.log('hello')
+})
